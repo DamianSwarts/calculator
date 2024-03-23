@@ -69,3 +69,15 @@ function recordOperator(input) {
         operation = input;
     }
 }
+
+// Function to add a floating point number
+function recordFloat(input) {
+    if (firstNumber == "") {
+        // Add a leading 0 if no number has been entered
+        firstNumber = "0.";
+    }else if (firstNumber.includes(".")) {
+        // If current number already has a floating point, do nothing
+    }else {
+        firstNumber += ".";
+    }
+}
