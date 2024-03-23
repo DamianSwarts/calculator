@@ -81,3 +81,13 @@ function recordFloat(input) {
         firstNumber += ".";
     }
 }
+
+// Calculate the total of the operation if operators and operands are valid. If they are invalid, do nothing.
+function recordTotal(input) {
+    if (firstNumber != "" && secondNumber != "" && operator != "") {
+        total = operate(operation, +secondNumber, +firstNumber);
+        secondNumber = total;
+        operation = "=";
+        firstNumber = "";
+    }
+}
