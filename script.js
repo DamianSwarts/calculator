@@ -99,3 +99,28 @@ function clearMemory() {
     operation = "";
     total = ""; 
 }
+
+// Function to record the eventListeners and store them in a correct variable
+function getInput(input) {
+    let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    let operators = ["+", "-", "*", "/"];
+    let equal = ["=", "Enter"];
+    let clear = ["clear"];
+    let float = ["."];
+    
+    if (numbers.includes(input)) {
+        // Record all the digits entered by the user to a single number
+        recordNumber(input);
+    }else if (float.includes(input)) {
+        // Add a floating point number
+        recordFloat(input);
+    }else if (operators.includes(input)) {
+        // Record the operator entered by the user in a global variable
+        recordOperator(input);
+    }else if (equal.includes(input)) {
+        // Record the total of the operation
+        recordTotal(input);
+    }else if (clear.includes(input)) {
+        clearMemory();
+    }
+}
