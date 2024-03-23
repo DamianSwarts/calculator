@@ -91,3 +91,11 @@ function recordTotal(input) {
         firstNumber = "";
     }
 }
+
+function clearMemory() {
+    // Reset global variables when the user press clear 
+    firstNumber = "";
+    secondNumber = "";
+    operation = "";
+    total = ""; 
+}
