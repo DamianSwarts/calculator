@@ -124,3 +124,33 @@ function getInput(input) {
         clearMemory();
     }
 }
+
+// Function to update the content of the display section
+function displayResults() {
+    let currentNumber = "";
+    
+    if (total != "" && firstNumber == "" && operation == "=") {
+        currentNumber = total;
+    }else if (firstNumber != "") {
+        currentNumber = firstNumber;
+    }
+    
+    // Avoid overflow of long numbers;
+    currentNumber = currentNumber.toString();
+    
+    if (currentNumber.length > 8) {
+        currentNumber = currentNumber.slice(0, 8);
+    }
+    
+    // Update the text content
+    document.querySelector("#current-number").textContent =
+        currentNumber;
+    document.querySelector("#top-row").textContent =
+        previousNumber;
+    document.querySelector("#operator").textContent =
+        operation;
+    
+    if (currentNumber == total && operation == "=") {
+        document.querySelector("#top-row").textContent = ""; 
+    }
+}
