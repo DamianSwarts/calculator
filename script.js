@@ -26,14 +26,14 @@ function divide(num1, num2){
 
 /*Function that takes an operator and 2 numbers 
 and then calls one of the above functions on the numbers*/
-function operate(operator, num1, num2) {
+function operate(operation, num1, num2) {
     
-    switch (operator) {
+    switch (operation) {
         case '+':
             return add(num1, num2);
             
         case '-':
-            return substract(num1, num2);
+            return subtract(num1, num2);
     
         case '*':
             return multiply(num1, num2);
@@ -65,7 +65,7 @@ function recordOperator(input) {
         // Calculate the total of the two stored numbers and move them to the secondNumber variable to free up space to record firstNumber
         total = operate(operation, +secondNumber, +firstNumber);
         secondNumber = total;
-        firstNumber = "";
+        firstNumber = secondNumber;
         operation = input;
     }
 }
@@ -84,7 +84,7 @@ function recordFloat(input) {
 
 // Calculate the total of the operation if operators and operands are valid. If they are invalid, do nothing.
 function recordTotal(input) {
-    if (firstNumber != "" && secondNumber != "" && operator != "") {
+    if (firstNumber != "" && secondNumber != "" && operation != "") {
         total = operate(operation, +secondNumber, +firstNumber);
         secondNumber = total;
         operation = "=";
@@ -137,7 +137,7 @@ function displayResults() {
     
     // Avoid overflow of long numbers;
     currentNumber = currentNumber.toString();
-    
+
     if (currentNumber.length > 8) {
         currentNumber = currentNumber.slice(0, 8);
     }
@@ -154,3 +154,20 @@ function displayResults() {
         document.querySelector("#top-row").textContent = ""; 
     }
 }
+
+buttons = document.querySelectorAll("button");
+
+buttons.forEach(button => {
+    button.addEventListener("click", (event) => {
+        let input = event.target.value;
+        getInput(input);
+        displayResults();
+    }); 
+});
+
+// Keyboard inputs
+document.addEventListener("keypress", (event) => {
+    let input = event.key;
+    getInput(input);
+    displayResults();
+});
