@@ -11,27 +11,33 @@
     </head>
     <body>
         <div id="calculator">
-            <div id="display"></div>
+            <section id="display">
+                <div id="top-row"></div>
+                <div id="bottom-row">
+                    <span id="operator"></span>
+                    <span id="current-number"></span>
+                </div>
+            </section>
             <div id="keys">
                 <div id="operators">                  
-                    <button class="operator-btn" onclick="displayValue(' - ')">-</button>
-                    <button class="operator-btn" onclick="displayValue(' + ')">+</button>
-                    <button class="operator-btn" onclick="displayValue(' x ')">x</button>
-                    <button class="operator-btn" onclick="displayValue(' ÷ ')">÷</button>
+                    <button class="operator-btn">-</button>
+                    <button class="operator-btn">+</button>
+                    <button class="operator-btn">x</button>
+                    <button class="operator-btn">÷</button>
                     <button class="operator-btn">=</button>
                 </div>
                 <div id="digits">
-                    <button class="digit" onclick="displayValue('7')">7</button>
-                    <button class="digit" onclick="displayValue('8')">8</button>
-                    <button class="digit" onclick="displayValue('9')">9</button>
-                    <button class="digit" onclick="displayValue('4')">4</button>
-                    <button class="digit" onclick="displayValue('5')">5</button>
-                    <button class="digit" onclick="displayValue('6')">6</button>
-                    <button class="digit" onclick="displayValue('1')">1</button>
-                    <button class="digit" onclick="displayValue('2')">2</button>
-                    <button class="digit" onclick="displayValue('3')">3</button>
-                    <button class="digit zero" onclick="displayValue('0')">0</button>
-                    <button class="digit clear-display" onclick="clearDisplay()">C</button>
+                    <button class="digit" value="7">7</button>
+                    <button class="digit" value="8">8</button>
+                    <button class="digit" value="9">9</button>
+                    <button class="digit" value="4">4</button>
+                    <button class="digit" value="5">5</button>
+                    <button class="digit" value="6">6</button>
+                    <button class="digit" value="1">1</button>
+                    <button class="digit" value="2">2</button>
+                    <button class="digit" value="3">3</button>
+                    <button class="digit zero" value="0">0</button>
+                    <button id="clear-display" value="clear">C</button>
                 </div>
             </div>
         </div>
