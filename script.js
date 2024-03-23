@@ -1,7 +1,8 @@
 //Variables for each of the parts of a calculator operation
-let firstNumber;
-let operation;
-let secondNumber;
+let firstNumber = "";
+let secondNumber = "";
+let operation = "";
+let total = "";
 
 // Function to add two numbers
 function add(num1, num2){
@@ -44,3 +45,8 @@ function operate(operator, num1, num2) {
             return ERROR;
     }
 }
+
+// Function to save numbers entered by the user in a variable 
+function recordNumber(input) {   
+    firstNumber = firstNumber + input;
+};
