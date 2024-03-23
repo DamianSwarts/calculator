@@ -138,8 +138,8 @@ function displayResults() {
     // Avoid overflow of long numbers;
     currentNumber = currentNumber.toString();
 
-    if (currentNumber.length > 8) {
-        currentNumber = currentNumber.slice(0, 8);
+    if (currentNumber.length > 9) {
+        currentNumber = currentNumber.slice(0, 9);
     }
     
     // Update the text content
