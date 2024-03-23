@@ -50,3 +50,22 @@ function operate(operator, num1, num2) {
 function recordNumber(input) {   
     firstNumber = firstNumber + input;
 };
+
+// Function to save the operator entered by the user in a variable
+function recordOperator(input) {
+    
+    if (secondNumber == "") {
+        // Move the recorded number into the secondNumber variable so it can be used later to operate
+        secondNumber = firstNumber;
+        firstNumber = "";
+        operation = input;
+    }else if (firstNumber == "") {
+        operation = input;
+    }else {
+        // Calculate the total of the two stored numbers and move them to the secondNumber variable to free up space to record firstNumber
+        total = operate(operation, +secondNumber, +firstNumber);
+        secondNumber = total;
+        firstNumber = "";
+        operation = input;
+    }
+}
